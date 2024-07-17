@@ -4,6 +4,7 @@ const userRoute = require("./routes/user");
 const blogRoute = require("./routes/blog");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+require("dotenv").config();
 const Blog = require("./models/blog");
 
 const {
@@ -15,9 +16,7 @@ const PORT = 8000;
 
 //DB connection
 mongoose
-  .connect(
-    "mongodb+srv://roshanbam46:bam777rb@nodeexpressprojects.0cmbsu7.mongodb.net/blogApp?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_URI)
   .then((e) => console.log("Database Connected"));
 
 app.set("view engine", "ejs");
