@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="container w-75 mt-5 p-5 border border-primary rounded shadow">
+      <div class="blog-post">
+        <h2 class="blog-post-title"><%= blog.title %></h2>
+        <p class="blog-post-meta">
+          by <%= blog.createdBy.fullName %>
+          <img
+            src="<%= blog.createdBy.profileImageURL %>"
+            alt=""
+            width="50px"
+          />
+        </p>
+        <img
+          src="<%= blog.coverImageURL %>"
+          class="img-fluid"
+          alt="Responsive image"
+        />
+        <hr />
+        <p><%= blog.body %></p>
+      </div>
+    </div>
+    <%- include("./partials/scripts") %>
+  </body>
+</html>

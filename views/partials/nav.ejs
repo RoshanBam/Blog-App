@@ -1,0 +1,42 @@
+<div class="container bg-dark mt-3">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a href="/" class="nav-link active" aria-current="page">Home</a>
+      </li>
+      <% if (locals.user) { %>
+      <li class="nav-item">
+        <a href="/blog/add-new" class="nav-link">Add Blog</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          User
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/user/logout">LogOut</a></li>
+        </ul>
+      </li>
+      <% } else {%>
+      <li class="nav-item">
+        <a href="/user/signup" class="nav-link">Create a new Account</a>
+      </li>
+      <li class="nav-item">
+        <a href="/user/signin" class="nav-link">Sign In</a>
+      </li>
+      <% } %>
+    </ul>
+  </header>
+</div>
+<% if(locals.error){ %>
+<div class="container mt-3">
+  <div class="alert alert-warning d-flex justify-content-center" role="alert">
+    <%= locals.error %>
+  </div>
+</div>
+<% } %>

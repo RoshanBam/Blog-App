@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <title>Add New Blog</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="container w-75 mt-5 p-5 border border-primary rounded shadow">
+      <main class="form-signin m-auto">
+        <form action="/blog" method="post" enctype="multipart/form-data">
+          <h1 class="h3 mb-3 fw-normal">Create a New Blog</h1>
+
+          <div class="form-floating m-1">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              name="title"
+            />
+            <label for="floatingInput">Title</label>
+          </div>
+
+          <div class="form-floating m-1">
+            <textarea
+              rows="8"
+              type="email"
+              class="form-control h-75"
+              id="floatingInput"
+              name="body"
+            ></textarea>
+            <label for="floatingInput">Content</label>
+          </div>
+
+          <div class="form-floating m-1">
+            <input
+              type="file"
+              class="form-control"
+              id="floatingInput"
+              name="coverImageURL"
+            />
+            <label for="floatingInput">Cover Image</label>
+          </div>
+
+          <button class="btn btn-primary mx-auto" type="submit">Upload</button>
+        </form>
+      </main>
+    </div>
+    <%- include("./partials/scripts") %>
+  </body>
+</html>
